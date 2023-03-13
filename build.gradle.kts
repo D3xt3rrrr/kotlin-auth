@@ -1,6 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+    application
     id("org.springframework.boot") version "3.0.4"
     id("io.spring.dependency-management") version "1.1.0"
     kotlin("jvm") version "1.7.22"
@@ -23,13 +24,6 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
-tasks.withType<Jar> {
-    manifest {
-        attributes["Main-Class"] = "com.webapp.jwt.JwtApplication"
-    }
-
-}
-
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
@@ -39,6 +33,10 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+application {
+    mainClass.set("com.webapp.jwt.JwtApplicationKt")
 }
 
 
