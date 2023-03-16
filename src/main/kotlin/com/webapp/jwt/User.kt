@@ -10,9 +10,9 @@ import org.springframework.security.core.userdetails.UserDetails
 @Document("user")
 data class User(
     @Id
-    val id : ObjectId = ObjectId(),
-    val email : String,
-    val pass : String,
+    var id : ObjectId = ObjectId(),
+    var email : String,
+    var pass : String,
     @Transient
     var grantedAuthorities: MutableCollection<out GrantedAuthority> = mutableListOf()
 ) : UserDetails {
