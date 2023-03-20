@@ -1,9 +1,11 @@
 server:
-  port: 8092
+  port: 9010
 spring:
   main:
     allow-circular-references: true
   data:
     mongodb:
-      uri: "mongodb://localhost:27017"
+      uri: "mongodb://mongo:qrgbYSzSHej053taZFJp@containers-us-west-200.railway.app:6246"
       database: "Kotlin"
+      username: "mongo"
+      password: "qrgbYSzSHej053taZFJp"
